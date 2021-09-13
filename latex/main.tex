@@ -40,7 +40,20 @@
 4NEC2 es un programa libre para modelizar antenas. Además de ser una
 herramienta potente para crear, ver optimizar y probar estructura de antenas en
 2D y 3D que tambíen genera, muestra y compara campos cercanos y lejanos de
-radiación.
+radiación. El código fuente esta escrito en el lenguaje de programación Fortran.
+
+4NEC2 por sus siglas en inglés: ``The Numerical Electromagnetics Code (NEC-2)''
+es un programa orientado al usuario para el análisis de respesta
+electromagnéticas de antenas y de otras estructuras metálicas. Esta hecho a
+través de distintos métodos numerocos de solución con ecuaciones integrales
+para para las corrientes inducidas en la estructura por fuentes o campos
+incidentes.
+
+El código fuente en el cual esta hecho 4NEC2 combina varias ecuaciones
+integrales para superficies suaves con una especializada en cables para proveer
+precisión para el modelamiento en estructuras de un ancho rango. Los mdelos
+deben incluir redes noradiantes y líneas de transmisión conectadas a partes de
+la estructura, con conductores perfectos e imperfectos.
 
 Algunas de las herramientas que vienen en 4NEC2 son el Optimizer y Sweeper con
 el cual se pueden hacer optimizaciones en la antena cuando se ejecutan barridos
@@ -67,5 +80,23 @@ frequencia.
 \item Archivo de ayuda de manera contextual.
 \end{itemize}
 
+\section{Modelamiento de la antena}
 
+Para el modelamiento de antenas debemos considerar distintos parámetros a tomar
+en cuenta para diseñar una antena. Como se sabe hay fórmula sencillas que se
+utilizan para hallar diseño de antenas (por ejemplo las dipolo) pero colocarlas
+en un software como NEC2 facilita etos cálculos pues solo se pondrían ciertos
+parámetros (como frecuencia y rango de radiaciíon=) para que el mismo software
+nos haga el análisis apartir del conocimiento previo que tenemos del programa.
+
+NEC2 usa un análisis básico de la antena basado en el ``método de momentos'',
+una técnica matemática donde subdivida una antena en pequeños segmentos para
+calcular las propiedades mas apropiadas para cada caso. Los resultados pueden
+ser sencillamente ajustados a las ecuaciones de ingeniería para resistencia del
+material, carga del elemento y efectos de la tierra. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.4\linewidth]{images/Captura de pantalla de 2021-09-12 23-21-26.png}
+\end{figure}
 \end{document}
