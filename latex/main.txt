@@ -1,0 +1,77 @@
+Universidad Católica de Santa Marı́a
+
+Escuela Profesional de Ingenierı́a Electrónica
+
+Informe 4NEC2
+
+Curso: Software de Telecomunicaciones
+Alumno: Luis Orlando Figueroa Morales
+Docente: Ing. Mario Urrutia Espinoza
+
+Arequipa - 2021
+
+1.
+
+Introducción
+
+4NEC2 es un programa libre para modelizar antenas. Además de ser una herramienta potente
+para crear, ver optimizar y probar estructura de antenas en 2D y 3D que tambı́en genera,
+muestra y compara campos cercanos y lejanos de radiación. El código fuente esta escrito en
+el lenguaje de programación Fortran.
+4NEC2 por sus siglas en inglés: “The Numerical Electromagnetics Code (NEC-2)” es un
+programa orientado al usuario para el análisis de respesta electromagnéticas de antenas y de
+otras estructuras metálicas. Esta hecho a través de distintos métodos numerocos de solución
+con ecuaciones integrales para para las corrientes inducidas en la estructura por fuentes o
+campos incidentes.
+El código fuente en el cual esta hecho 4NEC2 combina varias ecuaciones integrales para
+superficies suaves con una especializada en cables para proveer precisión para el modelamiento
+en estructuras de un ancho rango. Los mdelos deben incluir redes noradiantes y lı́neas de
+transmisión conectadas a partes de la estructura, con conductores perfectos e imperfectos.
+Algunas de las herramientas que vienen en 4NEC2 son el Optimizer y Sweeper con el cual se
+pueden hacer optimizaciones en la antena cuando se ejecutan barridos de frequencia haciendo
+que se generen gráficos de lı́neas de impedancia, ROE, ganancia, relación F/B de estilo lineal
+y logarı́tmico. Haciendo el Sweeper (o barrido) se puede mostrar de manera gráfica.
+
+Figura 1: Ventana principal de 4NEC2.
+
+2.
+
+Caracterı́sticas
+
+Algunas de las caracterı́sticas que este software nos detalla en su documentación (https://www.qsl.net/4nec2
+son:
+
+1
+
+Las gráficas en 2D y 3D de visualización de estructuras geométricas.
+Opción para arrastrar y soltar para poder modelar antenas.
+Visualización interactiva de la Carta de Smith para barridos de frequencia.
+Archivo de ayuda de manera contextual.
+
+3.
+
+Modelamiento de la antena
+
+Para el modelamiento de antenas debemos considerar distintos parámetros a tomar en cuenta
+para diseñar una antena. Como se sabe hay fórmula sencillas que se utilizan para hallar diseño
+de antenas (por ejemplo las dipolo) pero colocarlas en un software como NEC2 facilita etos
+cálculos pues solo se pondrı́an ciertos parámetros (como frecuencia y rango de radiaciı́on=)
+para que el mismo software nos haga el análisis apartir del conocimiento previo que tenemos
+del programa.
+NEC2 usa un análisis básico de la antena basado en el “método de momentos”, una técnica
+matemática donde subdivida una antena en pequeños segmentos para calcular las propiedades
+mas apropiadas para cada caso. Los resultados pueden ser sencillamente ajustados a las
+ecuaciones de ingenierı́a para resistencia del material, carga del elemento y efectos de la
+tierra.
+
+3.1.
+
+Modelamiento con Geometry Edit
+
+Con Geometry Editor se puede establecer la estructura geométrico de la antena. Esta herramienta
+se encuentra dentro de al ventana Main en settings y se marca Geometry Edit. Después de
+esto se preciona edit NEC and input file donde carga un ejemplo.
+Por ejemplo, si se quiere modelar un dipolo de
+
+2
+
