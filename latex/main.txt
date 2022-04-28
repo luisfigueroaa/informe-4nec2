@@ -207,6 +207,7 @@ mediante la herramienta de “Notepad ”.
 Modelado con Geometry Edit
 
 Con este tipo de modelado se establece la estructura geométrica de una antena.
+Se tiene que definir parámetros importantes cuestiá
 
 5
 
