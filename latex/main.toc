@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
+\contentsline {section}{\numberline {2}Características}{2}{section.2}%
+\contentsline {section}{\numberline {3}Modelamiento de la antena}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Modelamiento con Geometry Edit}{3}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Interfaz de usuario para 4nec2}{3}{section.4}%
+\contentsline {section}{\numberline {5}Como modelar antenas}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Archivos NEC}{4}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Facilidades de procesado}{5}{section.6}%
+\contentsline {section}{\numberline {7}Diseñando una antena}{5}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Modelado con Geometry Edit}{5}{subsection.7.1}%
