@@ -45,7 +45,7 @@
     \centering
     {\scshape\LARGE Universidad Católica de Santa María \par}
     \vspace{3em}
-    \includegraphics[width=0.25\textwidth]{$HOME/.config/latex/images/Escudo-UCSM.png}\par\vspace{3em}
+    \includegraphics[width=0.25\textwidth]{images/ucsm.png}\par\vspace{3em}
     \vspace{1cm}
     {\scshape\Large Escuela Profesional de Ingeniería Electrónica \par}
     \vspace{1.5cm}
@@ -60,6 +60,8 @@
 
     {\small Arequipa - 2021\par}
 \end{titlepage}
+
+\tableofcontents
 
 \section{Introducción}
 
@@ -229,9 +231,88 @@ geométrica y la otra es mediante la herramienta de ``Notepad ''.
 
 Con este tipo de modelado se establece la estructura geométrica de una antena.
 
-Se tiene que editar  el archivo en formato NEC, como ya se ha visto
-anteriormente, se presiona en el boton ``Edit NEC and input file''.
+Para poder modelar se debe entrar a la ventana ``Main'' en settings y despu\'es
+presionar en ``Edit NEC and input file''.
 
-Usando como ejemplo una antena dipolo $\lambda$
+Se debe poner las propiedades de la antena, para esto se har\'a un ejemplo de
+modelado de un dipolo \(\lambda/2\). para esto mencionaremos dos importantes
+par\'ametros:
 
+\begin{itemize}%Can change for enumerate
+    \item Settings - Length Unit - Meters (en la ventana Main).
+    \item Options - Set Segmentation - medium (en la ventana Geometry Edit).
+\end{itemize}
+
+Pasos para el modelado de la antena:
+
+\textbf{Especificando diseño de la antena}.
+
+Colocar una frecuencia de 29.98 Mhz (\(\lambda=10m\)).
+
+\textbf{Añadir hilos} 
+
+Crear un nivel XZ haciendo click en el bot\'on XZ. Luego introducir el hilo
+presionando el bot\'on del dibujo del hilo para habilitar se presiona el
+bot\'on ADD, el cual deber\'ia activarse en verde y la casilla Y (-). Se
+introduce un valor en Y el cual nos dar\'a la altura o profundidad.  Para este
+ejemplo se tomar\'a una profundidad de 0 m. El grosor de la rejilla se ajusta
+en la barra ``grid'' que aparece en la barra superior derecha. Para este
+ejemplo se colocar\'a en 0.1m. Y para este ejemplo se colocar\'a un hilo desde
+X=2.5m hasta X=-2.5m con un valor de Z=5m arrastrando el hilo del rat\'on con
+el bot\'on izquierdo pulsado entre los puntos. Finalmente, el radio del hilo
+debe ser seleccionado, de momento, a 1 mm. El tamaño de la ventana se puede
+ajustar en la barra de zoom para tener un mejor manejo del programa.
+
+\textbf{Agregar una fuente}
+
+Con el bot\'on Add presionado, se pulsar\'a el bot\'on de la fuente a añadir.
+
+Presionando en cualquier punto de la ventana de edici\'on har\'a que aparezca el
+s\'imbolo de la fuente, la cual se podr\'a colocar en cualquier punto deseado.
+En el caso del ejemplo que se est\'a aplicando lo centraremos en el hilo que se
+encuentra en la posici\'on Y=0, Z?5, X=0. las fuentes solo pueden situarse
+sobre los hilos. Para este ejemplo se tomar\'a una fuente de valor
+\texttt{1.0+j0.0 V} y \texttt{1.0 V}.
+
+\textbf{Conductividad de los hilos}
+
+En esta simulaci\'on haremos nuestra antena con alambres de \textit{cobre} y
+para ello se presionar\'a el bot\'on load (el s\'imbolo de RLC). Colocando la
+carga en uno de los hilos, cerca de la fuente.
+
+Despues se cambian las condiciones del hilo Par RLC a Wire-Ld y se selecciona
+el cobre. Se ve como el segmento cobre \textit{copper} y se ve como se el
+segmento apropiado del hilo de color anaranjado. Ahora, para cargar solo un
+hilo se deber\'a colocar la opci\'on \textit{single wire}. 
+
+\textbf{Desplazar/voltear/escalar antenas}
+
+Para determinar el radio de la antena se debe marcar el bot\'on  select object
+y el bot\'on wire geometry seleccionando un hilo, se tornar\'a de color rojo.
+Posteriormente se introduce un hijo (puede ser de un radio \#7).
+
+Usando este modo los hilos o las fuentes (y cargas) pueden ser desplazados o
+girados, para realizar esto solo se debe seleccionar el hilo.
+
+\textbf{Determinaci\'on de los par\'ametros de la tierra}
+
+Por defecto se representa el espacio de la antena al aire libre, para ponerla
+en segundo plano se debe marcar el bot\'on de Ground Params y elegir el tipo de
+tierra que se desee entre  \textit{``Free Space, Fast Ground, Perf Ground, Real
+Ground, Mininec Ground''}.
+
+Para determinar los par\'ametros de la tierra se debe. Se elige los tipos de
+tierra \textit{Clay/Forest}, el cual indica un promedio de arcilla y con
+vegetaci\'on. Por defecto, la conductividad y la constante del diel\'ectrico
+vienen fijadas a 0.005 S y 13 respectivamente.
+
+% foto de resultado en geometry editor
+
+Para iniciar NEC2-Maschine se debe presionar el not\'on con s\'imbolo de
+calculadora (o F7) despu\'es de guardar los datos. Aparecer\'a una ventana con
+opciones para poder marcar. Si se quiere producir el diagrama de radiación para
+campos lejanos se debe seleccionar ``Far Field pattern''. Seleccionamos la
+casilla full para obtener el diagrama de radiación de aquella dirección en la
+que nuestra antena radia mejor y tomamos una resolución de 5.
+ 
 \end{document}
