@@ -1,7 +1,6 @@
-latex/*pdf
-*zip
-*pdf
-latex/*log
-latex/*aux
-latex/*out
-4nec2-paul/
+*pdf 
+*aux
+*log
+*out
+*toc
+refs/
