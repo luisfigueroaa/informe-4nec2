@@ -1,0 +1,20 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Objetivos del programa}{2}{section.1}%
+\contentsline {section}{\numberline {2}Introducci\'on}{2}{section.2}%
+\contentsline {section}{\numberline {3}Interfaz de Usuario para 4NEC2}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Main (F2)}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Geometry (F3)}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Pattern (F4)}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Impedance(F5)}{4}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Otras ventanas que se pueden apreciar}{4}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Procesado}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Modelado de la antena Geometry Edit}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Verificación del modelo}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Modelado de una antena usando el notePAD editor}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}NEC ecitor(old)}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}NEC editor(new)}{7}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Aplicaciones de 4NEC2}{7}{section.5}%
+\contentsline {section}{\numberline {6}Ejemplo de diseño de una antena Yagi}{8}{section.6}%
+\contentsline {section}{\numberline {7}Ejemplo de diseño de una antena dipolo simple}{11}{section.7}%
+\contentsline {section}{\numberline {8}Conclusiones}{16}{section.8}%
+\contentsfinish 

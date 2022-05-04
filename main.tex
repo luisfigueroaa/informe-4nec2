@@ -1,16 +1,15 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage[none]{hyphenat} % no cortar las palabras
 \usepackage[margin=25mm]{geometry}
-    \hyphenation{thatshouldnot}
+    %\hyphenation{thatshouldnot}
 \usepackage{graphicx}
     \graphicspath{{images/}}
 \usepackage{tikz}
     \usetikzlibrary{shapes,arrows,positioning}
 \usepackage{float}
-\usepackage{listings} % for codeblocks
-\renewcommand{\lstlistingname}{Código}% Listing -> Algorithm
+\usepackage{listings} 
+\renewcommand{\lstlistingname}{Código}
 \usepackage{parskip}
 \usepackage{hyperref}
 
@@ -63,6 +62,8 @@
 
 \tableofcontents
 
+\newpage
+
 \section{Introducción}
 
 4NEC2 es un programa libre para modelizar antenas. Además de ser una
@@ -98,7 +99,7 @@ barrido) se puede mostrar de manera gráfica.
 \section{Características}
 
 Algunas de las características que este software nos detalla en su
-documentación (https://www.qsl.net/4nec2/) son:
+documentación (https://www\-.qsl.net/4nec2/) son:
 
 \begin{itemize}
 \item Las gráficas en 2D y 3D de visualización de estructuras geométricas.
@@ -114,7 +115,7 @@ Para el modelamiento de antenas debemos considerar distintos parámetros a tomar
 en cuenta para diseñar una antena. Como se sabe hay fórmula sencillas que se
 utilizan para hallar diseño de antenas (por ejemplo las dipolo) pero colocarlas
 en un software como NEC2 facilita estos cálculos pues solo se pondrían ciertos
-parámetros (como frecuencia y rango de radiación=) para que el mismo software
+parámetros (como frecuencia y rango de radiación) para que el mismo software
 nos haga el análisis a partir del conocimiento previo que tenemos del programa.
 
 NEC2 usa un análisis básico de la antena basado en el ``método de momentos'',
@@ -306,7 +307,7 @@ tierra \textit{Clay/Forest}, el cual indica un promedio de arcilla y con
 vegetaci\'on. Por defecto, la conductividad y la constante del diel\'ectrico
 vienen fijadas a 0.005 S y 13 respectivamente.
 
-% foto de resultado en geometry editor
+<++> 
 
 Para iniciar NEC2-Maschine se debe presionar el not\'on con s\'imbolo de
 calculadora (o F7) despu\'es de guardar los datos. Aparecer\'a una ventana con
@@ -314,5 +315,38 @@ opciones para poder marcar. Si se quiere producir el diagrama de radiación para
 campos lejanos se debe seleccionar ``Far Field pattern''. Seleccionamos la
 casilla full para obtener el diagrama de radiación de aquella dirección en la
 que nuestra antena radia mejor y tomamos una resolución de 5.
- 
+
+<++> 
+
+En “Show NEC” podemos ver el desarrollo del programa en NEC. La explicación de
+cada instrucción individual se desarrollará en capítulos posteriores. Si
+marcamos el botón ``Comment/Wire data'' podemos escribir comentarios que
+pudiéramos considerar luego al principio del código del programa. Los datos
+concernientes al número de segmentos así como al número de hilos los
+encontramos en segm-info.
+
+\textbf{Consideraciones cuando se modela una antena}
+
+\begin{itemize}%Can change for enumerate
+    \item Los hilos deben conectarse por sus extremos. Si alguno se aproxima
+	debe ser autom\'aticamente interconectado.
+    \item Dos alambres no pueden cruzarse ni atravesar el \'area ya que pueden
+	producir errores al conectarse.
+    \item Cada hilo debe estar dividido en segmentos individuales. ``The
+	NEC-maschine'' Consifdera cada segmento donde se desarrolla la potencia
+	de una sinusoide, y supone que la uni\'on de ambos extremos de dos
+	hijos de suman los flujos de ambos. Esto da un n\'umero finito de
+	variables a determinar. La exactitud de este depende del n\'umero de
+	segmentos, y al igual que el tiempo de computaci\'on.
+\end{itemize}
+
+\section{Verificaci\'on del modelo}
+
+Tras simular este modelo, se debe comprobar los resultados, en un principio se
+ven cuatro posibilidades. Se basa en la experiencia del usuario y en los datos
+representados. Para un usuario que no posea conocimientos sobre alta frecuencia
+le ser\'a muy difícil advertir si los resultados no son correctos. A
+continuaci\'on se ver\'a cuatro posibilidades de comprobaci\'on de resultados
+usando el ejemplo de modelo de \[\lambda/\].
+
 \end{document}
