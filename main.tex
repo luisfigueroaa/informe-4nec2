@@ -369,4 +369,46 @@ Tercer paso, se debe comprobar la impedancia de la antena. Se debe tener un
 valor razonable. Por ejemplo, el dipolo representa una impedancia de
 $76.2+j35.5\ \Omega$
 
+Es necesario ver los ersultados de la simulaci\'on y la distribuci\'on de la energ\'ia. Se debe mirar el valor y la fase de la energ\'ia en los segmentos. Considerando que un dipolo posee una distribuci\'on sim\'etrica de energ\'ia, como se puede observar en el ejemplo, as\'i tamb\'en como los m\'aximos locales en los extremos
+
+Es necesario ver los ersultados de la simulaci\'on y la distribuci\'on de la
+energ\'ia. Se debe mirar el valor y la fase de la energ\'ia en los segmentos.
+Considerando que un dipolo posee una distribuci\'on sim\'etrica de energ\'ia,
+como se puede observar en el ejemplo, as\'i tamb\'en como los m\'aximos locales
+en los extremos y e el punto de alimentaci\'on. La distribuci\'on de corriente representa as\'i una media onda. Con todos estos conocimientos sobre el dipolo $\lambda/2$ est\'a claro que los resultados si son los correctos.
+
+Se ve en la siguiente figura, la potencia en magnitud y fase. Es necesario recordar que no s\'olo la distribuci\'on es importante sino tambi\'en la fuerza de la energ\'ia. As\'i se inserta en la ilustraci\'on una escala de colores que representa la fuerza de la energ\'ia.
+
+<++> %Figura3: Distribución de corriente para un dipolo λ/2
+
+\section{Modelado usando ``note PAD editor''}
+
+\subsection{Instrucciones b\'asicas}
+
+Se muestran a continuaci\'on las instrucciones m\'as importantes que son necesarias para el modelado:
+
+\begin{itemize}
+    \item Cm (COMMENT): Los 30 primeros caracteres son interpretados como título.
+    \item CE (Fin de comentarios)
+    \item SY (variables): Define una variable.
+    \item GW (Geometry wire): Definimos la situación geométrica del hilo.
+\end{itemize}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+	\hline
+	cell1 & cell2 & cell3 \\\hline
+	cell4 & cell5 & cell6 \\\hline  
+	cell7 & cell8 & cell9 \\
+	\hline
+    \end{tabular}
+\end{center}
+
+\begin{itemize}%Can change for enumerate
+    \item GE (Geometry End): Se definen datos de GW.
+\end{itemize}
+
+
+
+
 \end{document}
