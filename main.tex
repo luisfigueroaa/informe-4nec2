@@ -1,7 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{tabularx}
 \usepackage{amsmath}
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-tabla]{babel}
 \usepackage[margin=25mm]{geometry}
     %\hyphenation{thatshouldnot}
 \usepackage{graphicx}
@@ -9,7 +10,7 @@
 \usepackage{tikz}
     \usetikzlibrary{shapes,arrows,positioning}
 \usepackage{float}
-\usepackage{listings} 
+\usepackage{listings}
 \renewcommand{\lstlistingname}{Código}
 \usepackage{parskip}
 \usepackage{hyperref}
@@ -30,12 +31,12 @@
     captionpos=b,
     keepspaces=true,
     numbers=left,
-    numbersep=5pt,                  
-    showspaces=false,                
+    numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2,
-    frame = single, 
+    frame = single,
 }
 \lstset{style=mystyle}
 
@@ -54,7 +55,7 @@
     \large
     {\bfseries Curso:} Software de Telecomunicaciones\par
     {\bfseries Alumno:} Luis Orlando Figueroa Morales\par
-    {\bfseries Docente:} Ing. Mario Urrutia Espinoza 
+    {\bfseries Docente:} Ing. Mario Urrutia Espinoza
 
     \vfill
 
@@ -308,7 +309,7 @@ tierra \textit{Clay/Forest}, el cual indica un promedio de arcilla y con
 vegetaci\'on. Por defecto, la conductividad y la constante del diel\'ectrico
 vienen fijadas a 0.005 S y 13 respectivamente.
 
-<++> 
+  
 
 Para iniciar NEC2-Maschine se debe presionar el not\'on con s\'imbolo de
 calculadora (o F7) despu\'es de guardar los datos. Aparecer\'a una ventana con
@@ -394,21 +395,96 @@ Se muestran a continuaci\'on las instrucciones m\'as importantes que son necesar
     \item GW (Geometry wire): Definimos la situación geométrica del hilo.
 \end{itemize}
 
-\begin{center}
-    \begin{tabular}{|c|c|c|}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 	\hline
-	cell1 & cell2 & cell3 \\\hline
-	cell4 & cell5 & cell6 \\\hline  
-	cell7 & cell8 & cell9 \\
+	N° Elemento & N° Segmentos & X1 & Y1 & Z1 & X2 & Y2 & Z2 & Radio \\
 	\hline
     \end{tabular}
-\end{center}
+    \caption{GW-map}
+\end{table}
 
 \begin{itemize}%Can change for enumerate
-    \item GE (Geometry End): Se definen datos de GW.
+    \item GE (Geometry End): Se definen los datos de GW.
 \end{itemize}
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|r|l|}
+	\hline
+	0 & Espacio libre (sin tierra).\\\hline
+	1 & Plano de tierra presente, todos los cables en Z=0 est\'an conectados a tierra.\\\hline
+	-1 & Plano de tierra presente, todos los cables en Z=0 est\'an aislados del terreno.\\
+	\hline
+    \end{tabular}
+\end{table}
 
+\begin{itemize}
+    \item EX (Excitation): Fuente de alimentación tipo 0 (ponemos un cero delante del número de fuente).
+\end{itemize}
 
+\begin{table}[H]
+    \centering
+    \caption{Ex-map}
+    \begin{tabular}{|l|l|l|l|l|l|}
+	\hline
+	N° Elemento & N° Segmentos & --XX(*) & Parte Real & Parte Imaginaria \\
+	\hline
+    \end{tabular}\\
+    \raggedright
+    \hspace{1.5em}(*) --XX:\\
+    \hspace{3em} Si es fuente de tensi\'on: 0 No indica acci\'on, 1 matriz admitancias.\\
+    \hspace{3em} Si es fuente de intensidad: 0 No indica acción, 1 matriz admitancias Si es fuente de intensidad: 0 No indica acción, 1 imprime las impedancias del análisis freq sweep.
+\end{table}
+
+\begin{itemize}
+    \item FR (frecuency): Indica la frecuencia de diseño.
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+	\hline
+	Lineal&0&N° de pasos&0&0&Valor incial&Tamaño de paso\\\hline
+	Logar\'itmica&1&N° de pasos&0&0&Valor inicial&Tamaño de paso\\\hline
+    \end{tabular}
+    \caption{FR-map}
+\end{table}
+
+\begin{itemize}
+    \item GN (Ground): Define las caracter\'isticas de la tierra.
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|}
+	\hline
+	Espacio libre&-1&&&&&&&\\\hline
+	Tierra finita&0&N° de hilos&0&0&Cons\-tante diel\'ectrica&Conduc\-tividad (S/m)&Radio del screen&Radio del hilo\\ \hline
+	Tierra perfecta&1&&&&&&&\\\hline
+	Mininec Ground (*)&2&0&0&0&Con\-stante diel\'ectrica/Conductividad (S/m)&&&\\\hline
+    \end{tabularx}
+    \raggedright 
+    * Cuando se conectan hilos a una tierra real o finita (valor Z=0) La impedancia de la antena es normalmente impredecible. Para evitar esto se usa Mininec grund.
+\end{table}
+
+\section{Estructura de una antena, distribuci\'on de corriente y fase}
+
+En el siguiente capítulo se usará un programa como ejemplo. Así diseñaremos una Yagi en el espacio libre. La explicación de cada instrucción individual se vio en el capítulo anterior.
+
+Al abrir el programa, dentro “File-Open” y seleccionamos el archivo. Si presionamos F7 arrancaremos NEC2- Machine. Aparecerá una nueva ventana en la que podremos seleccionar distintas opciones de procesado. Si hubiese errores se indicarían tras cargar el archivo. Para acentuar los segmentos erróneos se debe presionar la opci\'on ``validate'' en la ventana ``Geometry''.
+
+A continuaci\'on se usar\'a un programa como ejemplo. Diseñando una antena Yagi en espacio libre.
+
+\begin{lstlisting}[language=,caption=]
+CM 7-element wire Yagi, 10 meters CM L. B. Cebik, W4RNL
+CE
+GW 1 13 -2.5816 0 6.096 2.58166 0 6.096 .000512
+GW 2 13 -2.7495 -1.7907 6.096 2.74954 -1.7907 6.096 .000512 GW 3 13 -
+2.4384 1.4731 6.096 2.4384 1.4731 6.096 .000512 GW 4 13 -2.4193 1.3207
+2.4384 1.4731 6.096 2.4384 1.4731 6.096 .000512 GW 4 13 -2.4193 1.3207
+6.096 2.4192 1.3207 6.096 .000512 GW 5 13 -2.4003 5.46101 6.096 2.4003
+\end{lstlisting}
 
 \end{document}
