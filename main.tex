@@ -68,14 +68,14 @@
 
 \section{Introducción}
 
-4NEC2 es un programa libre para modelizar antenas. Además de ser una
+4NEC2 es un programa libre para modelizar antenas. Adem\'as de ser una
 herramienta potente para crear, ver optimizar y probar estructura de antenas en
 2D y 3D que también genera, muestra y compara campos cercanos y lejanos de
 radiación. El código fuente esta escrito en el lenguaje de programación Fortran.
 
 4NEC2 por sus siglas en inglés: ``The Numerical Electromagnetics Code (NEC-2)''
-es un programa orientado al usuario para el análisis de respuesta
-electromagnéticas de antenas y de otras estructuras metálicas. Esta hecho a
+es un programa orientado al usuario para el an\'alisis de respuesta
+electromagnéticas de antenas y de otras estructuras met\'alicas. Esta hecho a
 través de distintos métodos numéricos de solución con ecuaciones integrales
 para para las corrientes inducidas en la estructura por fuentes o campos
 incidentes.
@@ -88,9 +88,9 @@ la estructura, con conductores perfectos e imperfectos.
 
 Algunas de las herramientas que vienen en 4NEC2 son el Optimizer y Sweeper con
 el cual se pueden hacer optimizaciones en la antena cuando se ejecutan barridos
-dé frecuencia haciendo que se generen gráficos de líneas de impedancia, ROE,
+dé frecuencia haciendo que se generen gr\'aficos de líneas de impedancia, ROE,
 ganancia, relación F/B de estilo lineal y logarítmico. Haciendo el Sweeper (o
-barrido) se puede mostrar de manera gráfica.
+barrido) se puede mostrar de manera gr\'afica.
 
 \begin{figure}[H]
 \centering
@@ -104,7 +104,7 @@ Algunas de las características que este software nos detalla en su
 documentación (https://www\-.qsl.net/4nec2/) son:
 
 \begin{itemize}
-\item Las gráficas en 2D y 3D de visualización de estructuras geométricas.
+\item Las gr\'aficas en 2D y 3D de visualización de estructuras geométricas.
 \item Opción para arrastrar y soltar para poder modelar antenas.
 \item Visualización interactiva de la Carta de Smith para barridos de
 frecuencia.
@@ -113,15 +113,15 @@ frecuencia.
 
 \section{Modelamiento de la antena}
 
-Para el modelamiento de antenas debemos considerar distintos parámetros a tomar
+Para el modelamiento de antenas debemos considerar distintos par\'ametros a tomar
 en cuenta para diseñar una antena. Como se sabe hay fórmula sencillas que se
 utilizan para hallar diseño de antenas (por ejemplo las dipolo) pero colocarlas
-en un software como NEC2 facilita estos cálculos pues solo se pondrían ciertos
-parámetros (como frecuencia y rango de radiación) para que el mismo software
-nos haga el análisis a partir del conocimiento previo que tenemos del programa.
+en un software como NEC2 facilita estos c\'alculos pues solo se pondrían ciertos
+par\'ametros (como frecuencia y rango de radiación) para que el mismo software
+nos haga el an\'alisis a partir del conocimiento previo que tenemos del programa.
 
-NEC2 usa un análisis básico de la antena basado en el ``método de momentos'',
-una técnica matemática donde subdivida una antena en pequeños segmentos para
+NEC2 usa un an\'alisis b\'asico de la antena basado en el ``método de momentos'',
+una técnica matem\'atica donde subdivida una antena en pequeños segmentos para
 calcular las propiedades mas apropiadas para cada caso. Los resultados pueden
 ser sencillamente ajustados a las ecuaciones de ingeniería para resistencia del
 material, carga del elemento y efectos de la tierra. 
@@ -137,7 +137,7 @@ Por ejemplo, si se quiere modelar un dipolo de $\lambda$.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=.4\linewidth]{images/Captura de pantalla de 2021-09-12 23-21-26.png}
+\includegraphics[width=.4\linewidth]{images/Captura_de_pantalla_de_2021-09-12_23-21-26.png}
 \end{figure}
 
 En esta figura se pueden ver los distintos elementos, un dipolo, antenas
@@ -147,7 +147,7 @@ debe poner un aproximado ya que es una figura no recta.
 \section{Interfaz de usuario para 4nec2}
 
 Al inicio el usuario tiene cuatro ventanas principales (y también accesos
-rápidos a dichas ventanas. Las cuales son:
+r\'apidos a dichas ventanas. Las cuales son:
 
 \begin{enumerate}
     \item Main (F2).
@@ -165,6 +165,24 @@ A continuación se puede ver una captura de pantalla de una maquina virtual con
     \caption{Captura de pantalla de las 4 ventanas ya ejecutadas.}
 \end{figure}
 
+\subsection{Archivos admitidos}
+
+4NEC2 permite tres tipos de archivos: nec, out, ez, ant.
+
+A continuaci\'on se puede ver una captura de pantalla de los formatos permitidos por 4NEC2.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.3\linewidth]{./images/Screenshot_win7_2022-05-31_00:24:55.png}
+    \caption{Menu de formatos admitidos en 4NEC2.}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{nec:} NEC (Numerical Electromagnetics Code), son archivos de ingreso de datos. 
+    \item \textbf{out:} Archivos de salida de datos en formato NEC.
+    \item \textbf{ez:} Son archivos de entrada en formato EZnec (Formato de paquete comercial (no libre) que usa este formato, EZnec es un software que tambi\'en se puede utilizar de alternativa a 4nec2, ya que esta basado en NEC3 y NEC4.
+\end{itemize}
+
 \section{Como modelar antenas}
 
 Lo importante antes de comenzar haciendo la modelación de las antenas es
@@ -172,7 +190,7 @@ conocer cual es nuestro entorno como por ejemplo saber que tipos de archivos
 vamos a usar a editar, como lo veremos a continuación.
 
 Hay muchas guías en internet pero en esta ocasión usaremos una guía disponible
-en la página \href{https://leanpub.com/4nec2definitiveguide/read}{leanpub}.
+en la p\'agina \href{https://leanpub.com/4nec2definitiveguide/read}{leanpub}.
 
 \subsection{Archivos NEC}
 Lo primero para poder hacer el modelamiento de la antena es reconocer como es
@@ -321,7 +339,7 @@ que nuestra antena radia mejor y tomamos una resolución de 5.
 <++> 
 
 En “Show NEC” podemos ver el desarrollo del programa en NEC. La explicación de
-cada instrucción individual se desarrollará en capítulos posteriores. Si
+cada instrucción individual se desarrollar\'a en capítulos posteriores. Si
 marcamos el botón ``Comment/Wire data'' podemos escribir comentarios que
 pudiéramos considerar luego al principio del código del programa. Los datos
 concernientes al número de segmentos así como al número de hilos los
@@ -361,7 +379,7 @@ proporcionada a la antena. Su valor se representa en la ventana Main. Ésta no
 puede ser mayor del 100\%. Si se diese este caso, la simulación sería
 incorrecta. Sin embargo, con una estructura sin cargas es razonable contar con
 una eficiencia del 100\% puesto que no hay pérdidas. En el ejemplo del dipolo,
-que posee una carga, tenemos una eficiencia algo más pequeña del 100\%, en
+que posee una carga, tenemos una eficiencia algo m\'as pequeña del 100\%, en
 torno a 99,2\%. Esto parece realista y confirma la aceptación de los
 resultados. Si la eficiencia de la antena es muy pequeña, por debajo del 50\%,
 probablemente los resultados sean incorrectos.
@@ -435,7 +453,7 @@ Se muestran a continuaci\'on las instrucciones m\'as importantes que son necesar
     \raggedright
     \hspace{1.5em}(*) --XX:\\
     \hspace{3em} Si es fuente de tensi\'on: 0 No indica acci\'on, 1 matriz admitancias.\\
-    \hspace{3em} Si es fuente de intensidad: 0 No indica acción, 1 matriz admitancias Si es fuente de intensidad: 0 No indica acción, 1 imprime las impedancias del análisis freq sweep.
+    \hspace{3em} Si es fuente de intensidad: 0 No indica acción, 1 matriz admitancias Si es fuente de intensidad: 0 No indica acción, 1 imprime las impedancias del an\'alisis freq sweep.
 \end{table}
 
 \begin{itemize}
@@ -471,9 +489,9 @@ Se muestran a continuaci\'on las instrucciones m\'as importantes que son necesar
 
 \section{Estructura de una antena, distribuci\'on de corriente y fase}
 
-En el siguiente capítulo se usará un programa como ejemplo. Así diseñaremos una Yagi en el espacio libre. La explicación de cada instrucción individual se vio en el capítulo anterior.
+En el siguiente capítulo se usar\'a un programa como ejemplo. Así diseñaremos una Yagi en el espacio libre. La explicación de cada instrucción individual se vio en el capítulo anterior.
 
-Al abrir el programa, dentro “File-Open” y seleccionamos el archivo. Si presionamos F7 arrancaremos NEC2- Machine. Aparecerá una nueva ventana en la que podremos seleccionar distintas opciones de procesado. Si hubiese errores se indicarían tras cargar el archivo. Para acentuar los segmentos erróneos se debe presionar la opci\'on ``validate'' en la ventana ``Geometry''.
+Al abrir el programa, dentro “File-Open” y seleccionamos el archivo. Si presionamos F7 arrancaremos NEC2- Machine. Aparecer\'a una nueva ventana en la que podremos seleccionar distintas opciones de procesado. Si hubiese errores se indicarían tras cargar el archivo. Para acentuar los segmentos erróneos se debe presionar la opci\'on ``validate'' en la ventana ``Geometry''.
 
 A continuaci\'on se usar\'a un programa como ejemplo. Diseñando una antena Yagi en espacio libre.
 
@@ -485,6 +503,30 @@ GW 2 13 -2.7495 -1.7907 6.096 2.74954 -1.7907 6.096 .000512 GW 3 13 -
 2.4384 1.4731 6.096 2.4384 1.4731 6.096 .000512 GW 4 13 -2.4193 1.3207
 2.4384 1.4731 6.096 2.4384 1.4731 6.096 .000512 GW 4 13 -2.4193 1.3207
 6.096 2.4192 1.3207 6.096 .000512 GW 5 13 -2.4003 5.46101 6.096 2.4003
+5.4611 6.096 .000512
+GW 6 13 -2.3875 7.8739 6.096 2.3875 7.8739 6.096 .000512 GW 7 13 -
+2.3685 10.1346 6.096 2.36854 10.1346 6.096 .000512
+GE 1
+GN 2 0 0 0 15 .002 0 0 0 0
+EX 0 1 7 0 1 0
+LD 5 1 1 13 5.8001E7
+LD  2 1 13 5.8001E7
+LD 5 3 1 13 5.8001E7
+LD 5 4 1 13 5.8001E7
+LD 5 5 1 13 5.8001E7
+LD 5 6 1 13 5.8001E7
+LD 5 7 1 13 5.8001E7
+SY fr = 28.5
+FR 0 1 0 0 fr 0
+EN
 \end{lstlisting}
+
+Una vez escrito el programa en el bloc de notas se carga en "File-Open" y se selecciona el archivo, presionando F7 se arranca la NEC2-Machine. Apareciendo una ventana en la que se puede seleccionar distintas opciones del procesado.
+
+En caso de que hayan errores se indicar\'ian al cargar el archivo, para los errores se tiene que presionar el bot\'on validate dentro de la ventana Geometry.
+
+Si queremos obtener m\'as información de los distintos segmentos, debemos presionar en el segmento deseado con el botón izquierdo. El segmento se tornar\'a verde remarcando los extremos con un círculo. El círculo cerrado representa el primer extremo, mientras que el círculo abierto el segundo. Aparecer\'a una nueva ventana con toda la información del segmento.
+
+% figura de Informaci\'on de hilo y segmento
 
 \end{document}
